@@ -30,11 +30,7 @@ It gives agents tool access to fax drafts, sending, delivery status, incoming do
 
 This repository follows the [Agent Plugins](https://agent-plugins.org) open standard: [`plugin.json`](plugin.json) and [`mcp.json`](mcp.json) at the root, with skills in [`skills/`](skills/). Any conformant client can load the package; connecting to DearFax also requires supported OAuth registration.
 
-Platform-specific manifests are also included:
-
-- **ChatGPT and Codex** — [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json), with [`.mcp.json`](.mcp.json).
-
-ChatGPT/Codex directory publication is pending.
+ChatGPT and Codex use the same files, with OpenAI-specific metadata in `plugin.json` under `extensions.com.openai`.
 
 ## Prerequisites
 

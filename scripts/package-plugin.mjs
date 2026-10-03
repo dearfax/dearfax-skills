@@ -11,8 +11,6 @@ import assert from "node:assert/strict";
 
 // Explicit allowlist keeps credentials and unrelated files out of releases.
 const files = [
-  ".codex-plugin/plugin.json",
-  ".mcp.json",
   "plugin.json",
   "mcp.json",
   "README.md",
@@ -22,17 +20,8 @@ const files = [
 ];
 const source = resolve(import.meta.dirname, "..");
 const manifest = JSON.parse(readFileSync(resolve(source, files[0]), "utf8"));
-const portableManifest = JSON.parse(
-  readFileSync(resolve(source, "plugin.json"), "utf8"),
-);
-const portableMcp = JSON.parse(
-  readFileSync(resolve(source, "mcp.json"), "utf8"),
-);
-assert.equal(portableManifest.name, manifest.name);
-assert.equal(portableManifest.version, manifest.version);
-assert.equal(portableManifest.license, "MIT");
-assert.equal(portableMcp.mcpServers.dearfax.type, "streamable-http");
-const metadata = manifest.interface;
+assert.equal(manifest.license, "MIT");
+const metadata = manifest.extensions["com.openai"].interface;
 for (const [field, limit] of Object.entries({
   displayName: 30,
   shortDescription: 30,
@@ -74,12 +63,11 @@ for (const test of [...cases.positive, ...cases.negative])
 for (const test of cases.positive)
   assert(test.tools_triggered && test.expected_behavior);
 const servers = JSON.parse(
-  readFileSync(resolve(source, ".mcp.json"), "utf8"),
+  readFileSync(resolve(source, "mcp.json"), "utf8"),
 ).mcpServers;
 assert.deepEqual(Object.keys(servers), ["dearfax"]);
 assert.equal(servers.dearfax.url, "https://app.dearfax.com/api/mcp");
-assert.equal(portableMcp.mcpServers.dearfax.url, servers.dearfax.url);
-assert.equal(manifest.mcpServers, "./.mcp.json");
+assert.equal(servers.dearfax.type, "streamable-http");
 assert.equal(metadata.logo, "./assets/dearfax-mark.svg");
 assert.equal(metadata.composerIcon, metadata.logo);
 for (const file of files)

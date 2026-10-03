@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "dearfax": {
-      "type": "http",
-      "url": "https://app.dearfax.com/api/mcp"
-    }
-  }
-}
