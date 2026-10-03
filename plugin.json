@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dearfax",
+  "version": "0.4.3",
+  "description": "Attach documents, review and send confirmed faxes, and check delivery with DearFax.",
+  "author": {
+    "name": "SF VENTURES",
+    "url": "https://dearfax.com"
+  },
+  "homepage": "https://dearfax.com/mcp",
+  "repository": "https://github.com/dearfax/dearfax-skills",
+  "license": "MIT"
+}

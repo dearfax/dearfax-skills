@@ -13,6 +13,8 @@ import assert from "node:assert/strict";
 const files = [
   ".codex-plugin/plugin.json",
   ".mcp.json",
+  "plugin.json",
+  "mcp.json",
   "README.md",
   "LICENSE",
   "assets/dearfax-mark.svg",
@@ -20,6 +22,16 @@ const files = [
 ];
 const source = resolve(import.meta.dirname, "..");
 const manifest = JSON.parse(readFileSync(resolve(source, files[0]), "utf8"));
+const portableManifest = JSON.parse(
+  readFileSync(resolve(source, "plugin.json"), "utf8"),
+);
+const portableMcp = JSON.parse(
+  readFileSync(resolve(source, "mcp.json"), "utf8"),
+);
+assert.equal(portableManifest.name, manifest.name);
+assert.equal(portableManifest.version, manifest.version);
+assert.equal(portableManifest.license, "MIT");
+assert.equal(portableMcp.mcpServers.dearfax.type, "streamable-http");
 const metadata = manifest.interface;
 for (const [field, limit] of Object.entries({
   displayName: 30,
@@ -66,6 +78,7 @@ const servers = JSON.parse(
 ).mcpServers;
 assert.deepEqual(Object.keys(servers), ["dearfax"]);
 assert.equal(servers.dearfax.url, "https://app.dearfax.com/api/mcp");
+assert.equal(portableMcp.mcpServers.dearfax.url, servers.dearfax.url);
 assert.equal(manifest.mcpServers, "./.mcp.json");
 assert.equal(metadata.logo, "./assets/dearfax-mark.svg");
 assert.equal(metadata.composerIcon, metadata.logo);
