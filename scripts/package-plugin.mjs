@@ -15,7 +15,6 @@ const files = [
   ".mcp.json",
   "README.md",
   "LICENSE",
-  "assets/readme-header.svg",
   "assets/dearfax-mark.svg",
   "skills/dearfax/SKILL.md",
 ];

@@ -1,14 +1,3 @@
-<p align="center">
-  <a href="https://dearfax.com"><img src="assets/readme-header.svg" alt="DearFax — Send, receive, and track faxes online. Skills and tools for your assistant." width="100%"></a>
-</p>
-
-<p align="center">
-  <a href="https://dearfax.com/mcp">Documentation</a> ·
-  <a href="https://dearfax.com">DearFax</a> ·
-  <a href="https://dearfax.com/contact">Support</a> ·
-  <a href="LICENSE">MIT license</a>
-</p>
-
 # DearFax Skills
 
 Give your assistant the tools and guidance to prepare faxes, review documents, and send after your confirmation. Check delivery, find receipts, and read incoming faxes in the workspace you choose.
