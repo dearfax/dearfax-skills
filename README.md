@@ -16,6 +16,7 @@ Select the DearFax skill when prompted. This command installs the skill; connect
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | [dearfax](skills/dearfax/SKILL.md) | Choose a workspace, prepare and review faxes, send after confirmation, check delivery, and read incoming documents. |
 
+
 ## MCP server
 
 DearFax’s hosted [MCP server](https://dearfax.com/mcp) connects over Streamable HTTP at:
@@ -39,3 +40,7 @@ A DearFax account with access to a workspace and the permissions and allowance f
 ## License
 
 [MIT](LICENSE)
+
+## Version 0.5.0 preparation
+
+The fax panel lets users choose a workspace directly. Native inbox and review panels require the matching DearFax MCP server release and a compatible host. Text workflows remain available in other clients. Deploy and verify that server release before submitting this package; this branch does not change the version currently under review.

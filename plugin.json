@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dearfax",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Attach documents, review and send confirmed faxes, and check delivery with DearFax.",
   "author": {
     "name": "SF VENTURES",
@@ -29,7 +29,9 @@
         ],
         "supportURL": "https://dearfax.com/contact",
         "logo": "./assets/dearfax-mark.svg",
-        "composerIcon": "./assets/dearfax-mark.svg"
+        "composerIcon": "./assets/dearfax-mark.svg",
+        "logoDark": "./assets/dearfax-mark-dark.svg",
+        "composerIconDark": "./assets/dearfax-mark-dark.svg"
       },
       "review": {
         "test_cases": {
@@ -85,8 +87,9 @@
         }
       },
       "publication": {
-        "release_notes": "DearFax for ChatGPT and Codex: confirmed fax sending, delivery checks, incoming document pages, workspace webhooks, and fax number requests using existing capacity."
+        "release_notes": "Adds an embedded fax inbox with Inbox, Drafts, and Sent tabs, pagination, unread state, and fax review where supported. Requires the matching DearFax server release; text workflows remain available."
       }
     }
-  }
+  },
+  "skills": "./skills/"
 }
