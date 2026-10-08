@@ -29,7 +29,9 @@
         ],
         "supportURL": "https://dearfax.com/contact",
         "logo": "./assets/dearfax-mark.svg",
-        "composerIcon": "./assets/dearfax-mark.svg"
+        "composerIcon": "./assets/dearfax-mark.svg",
+        "logoDark": "./assets/dearfax-mark-dark.svg",
+        "composerIconDark": "./assets/dearfax-mark-dark.svg"
       },
       "review": {
         "test_cases": {
@@ -85,9 +87,8 @@
         }
       },
       "publication": {
-        "release_notes": "Adds guided workspace setup, filtered fax activity, and an embedded inbox and fax review where supported. Requires the matching DearFax server release; text workflows remain available."
-      },
-      "onboardingSkill": "./skills/setup/SKILL.md"
+        "release_notes": "Adds an embedded fax inbox with Inbox, Drafts, and Sent tabs, pagination, unread state, and fax review where supported. Requires the matching DearFax server release; text workflows remain available."
+      }
     }
   },
   "skills": "./skills/"

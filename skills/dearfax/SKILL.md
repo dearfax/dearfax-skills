@@ -44,6 +44,6 @@ If receiving is unavailable or no existing number slot is available, explain the
 
 ## Embedded panels
 
-When available, `open_fax_inbox` opens a workspace chooser and inbox. `review_fax` displays the reviewed recipient, documents, cover, and page count. The panel’s deliberate Send fax action uses the same server confirmation checks. Do not also send from the conversation when the user has sent through the panel. After uncertainty, check the existing fax status first.
+When available, `open_fax_inbox` opens a workspace chooser and fax panel with Inbox, Drafts, and Sent tabs. The panel uses `list_fax_folder` for pagination and `mark_fax_read` after viewing an incoming document or explicitly marking it read. Its Send a fax button opens the DearFax composer; clicking it does not transmit a fax. `review_fax` displays the reviewed recipient, documents, cover, and page count. The panel’s deliberate Send fax action uses the same server confirmation checks. Do not also send from the conversation when the user has sent through the panel. After uncertainty, check the existing fax status first.
 
 If the host does not support panels, continue with the text workflow above. Do not claim a panel opened unless the host displayed it. Never bypass host approvals or copy confirmation tokens into visible messages.
