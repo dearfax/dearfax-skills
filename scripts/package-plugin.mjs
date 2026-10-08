@@ -17,6 +17,7 @@ const files = [
   "LICENSE",
   "assets/dearfax-mark.svg",
   "skills/dearfax/SKILL.md",
+  "skills/setup/SKILL.md",
 ];
 const source = resolve(import.meta.dirname, "..");
 const manifest = JSON.parse(readFileSync(resolve(source, files[0]), "utf8"));
@@ -35,6 +36,11 @@ for (const [field, limit] of Object.entries({
   );
 }
 assert.equal(manifest.name, "dearfax");
+assert.equal(manifest.skills, "./skills/");
+assert.equal(
+  manifest.extensions["com.openai"].onboardingSkill,
+  "./skills/setup/SKILL.md",
+);
 assert.match(manifest.version, /^\d+\.\d+\.\d+$/);
 for (const field of [
   "websiteURL",
